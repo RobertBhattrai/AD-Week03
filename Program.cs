@@ -134,6 +134,95 @@ namespace Program
                     Console.WriteLine("Invalid day number");
                 break; 
             }
+
+            //Task 5: Loops 
+            Console.WriteLine("Task 5: Loops");
+            Console.WriteLine("For Loop:");
+            Console.WriteLine("Input a number: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int sum = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                Console.WriteLine(sum);
+                sum = sum + i;
+                Console.WriteLine(sum);
+
+            }
+            Console.WriteLine("Sum from 1 to " + n + " is: " + sum);
+
+            Console.WriteLine("While Loop:");
+            int count = 1;
+            while (count <= 20)
+            {
+                if (count > 15)
+                {
+                    break;
+                }
+                if (count % 4 == 0)
+                {
+                    count++;
+                    continue;
+                }
+
+                Console.WriteLine(count);
+                count++;
+            }
+
+            // Foreach loop
+            int[] numbers = { 1, 8, 5, 1, 1 };
+            int arraySum = 0;
+            foreach (int number in numbers)
+            {
+                arraySum += number;
+            }
+            Console.WriteLine($"Sum of array elements: {arraySum}");
+            Console.WriteLine();
+
+
+
+            // Task 6: Exception Handling
+            Console.WriteLine("Task 6: Exception Handling");
+
+            // Number conversion with try-catch-finally
+            try
+            {
+                Console.Write("Enter a number: ");
+                string input = Console.ReadLine();
+                int convertedNumber = int.Parse(input);
+                Console.WriteLine($"You entered: {convertedNumber}");
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Invalid number format");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+            finally
+            {
+                Console.WriteLine("Program Executed");
+            }
+
+            // Password validation with throw
+            try
+            {
+                Console.Write("Enter a password: ");
+                string password = Console.ReadLine();
+
+                if (password.Length < 6)
+                {
+                    throw new Exception("Password must be at least 6 characters.");
+                }
+                else
+                {
+                    Console.WriteLine("Password satisfied the requirement");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
         }  
     }
 }
