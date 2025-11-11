@@ -34,6 +34,26 @@ namespace Program
             Console.WriteLine(result);
         }
     }
+
+    class NullOperations
+    {
+        public void PerformNullCheck()
+        {
+            string username = null;
+            // Ternary Operator
+            string message = (username == null) ? "Username is not available" : username;
+            Console.WriteLine($"Ternary Operator: {message}");
+
+            // Null-Coalescing Operator
+            string result = username ?? "Username is not available";
+            Console.WriteLine($"Null-Coalescing Operator: {result}");
+
+            // Null-Coalescing Assignment Operator
+            username ??= "NewUser";
+            Console.WriteLine($"After Null-Coalescing Assignment Operator: {username}");
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
@@ -55,6 +75,11 @@ namespace Program
             Console.Write("Odd Even Finder for number 7: ");
             ops.OddEvenFinder(7);
             Console.WriteLine();
+
+            // Task 2: Null Operations
+            Console.WriteLine("Null Operations Task Results");
+            NullOperations nullOps = new NullOperations();
+            nullOps.PerformNullCheck();
         }
     }
 }
