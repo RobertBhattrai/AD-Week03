@@ -70,7 +70,7 @@ namespace Program
             Console.WriteLine("Subtraction: " + ops.Subtract(10, 5));
             Console.WriteLine("Multiplication: " + ops.Multiply(10, 5));
             Console.WriteLine("Division: " + ops.Divide(10, 5));
-            
+
             //Odd Even Finder
             Console.Write("Odd Even Finder for number 7: ");
             ops.OddEvenFinder(7);
@@ -80,6 +80,23 @@ namespace Program
             Console.WriteLine("Null Operations Task Results");
             NullOperations nullOps = new NullOperations();
             nullOps.PerformNullCheck();
+
+            //Task 3: If else and switch
+            Console.Write("Enter your age: ");
+            int age = Convert.ToInt32(Console.ReadLine());
+
+            if (age < 13)
+            {
+                Console.WriteLine("Child");
+            }
+            else if (age >= 13 && age < 20)
+            {
+                Console.WriteLine("Teenager");
+            }
+            else if (age >= 20)
+            {
+                Console.WriteLine("Adult");
+            }
         }
     }
 }
