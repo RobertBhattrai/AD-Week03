@@ -132,7 +132,7 @@ namespace Program
                 break;
                 default:
                     Console.WriteLine("Invalid day number");
-                break;
+                break; 
             }
         }  
     }
